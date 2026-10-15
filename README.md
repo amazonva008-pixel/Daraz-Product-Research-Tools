@@ -1,3 +1,17 @@
+## ⚙️ Installation & Usage
+
+### 1. Access the Niche Intelligence Dashboard (Online)
+You don't need to install anything to use the Black Box and Keyword tools! 
+👉 **[Launch Live Streamlit Dashboard Here](#)** *(Insert your Streamlit Cloud URL once deployed)*
+
+### 2. Install the Daraz X-Ray Chrome Extension (Sideloading)
+To use the real-time catalog analytics overlay directly on Daraz.pk:
+1. Download or clone the `extension/` folder from this repository.
+2. Open Google Chrome and navigate to `chrome://extensions/`.
+3. Enable **Developer Mode** in the top-right corner.
+4. Click **Load unpacked** and select the `extension/` folder.
+5. Head over to [Daraz.pk](https://www.daraz.pk), search for a product category, and click **"🎯 Launch Daraz X-Ray"**!
+
 # 🎯 Daraz Niche Intelligence Suite
 
 An end-to-end e-commerce market research and product hunting platform built specifically for **Daraz.pk**, inspired by industry tools like Helium 10. This project combines a high-performance **Chrome Extension** for real-time catalog analytics with a **Python & Streamlit backend** for advanced niche opportunity scoring and keyword harvesting.
