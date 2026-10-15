@@ -48,7 +48,10 @@ def create_driver(headless=True):
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
     options.add_argument("--log-level=3")
-
+    options.add_argument("--headless=new")
+    
+    options.add_argument("--disable-gpu")
+    
     # Hide automation flags natively
     options.add_experimental_option("excludeSwitches", ["enable-automation", "enable-logging"])
     options.add_experimental_option("useAutomationExtension", False)
