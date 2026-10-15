@@ -1,0 +1,58 @@
+{
+  "median_reviews": {
+    "mini fan": 3,
+    "handheld mini fan": 19.0,
+    "desk fan": 10.0,
+    "cooling fan": 7,
+    "rechargeable mini fan": 67.5,
+    "handheld fan": 13.0
+  },
+  "median_sold": {
+    "mini fan": 11.0,
+    "handheld mini fan": 127.5,
+    "desk fan": 71.0,
+    "cooling fan": 61.5,
+    "rechargeable mini fan": 154.0,
+    "handheld fan": 77.0
+  },
+  "median_price": {
+    "mini fan": 2099.0,
+    "handheld mini fan": 759.0,
+    "desk fan": 849.5,
+    "cooling fan": 892.0,
+    "rechargeable mini fan": 561.0,
+    "handheld fan": 624.5
+  },
+  "dominance": {
+    "mini fan": 18.59259259259259,
+    "handheld mini fan": 6.39196675900277,
+    "desk fan": 14.263636363636362,
+    "cooling fan": 14.608465608465607,
+    "rechargeable mini fan": 2.765020576131687,
+    "handheld fan": 12.615384615384615
+  },
+  "sale_to_review": {
+    "mini fan": 3.583333333333333,
+    "handheld mini fan": 5.5098814229249005,
+    "desk fan": 6.5,
+    "cooling fan": 5.881123102700572,
+    "rechargeable mini fan": 5.641283524904214,
+    "handheld fan": 6.502579025447906
+  },
+  "total_listings": {
+    "mini fan": 15857,
+    "handheld mini fan": 6238,
+    "desk fan": 4415,
+    "cooling fan": 18132,
+    "rechargeable mini fan": 8101,
+    "handheld fan": 6375
+  },
+  "median_rating": {
+    "mini fan": 0.0,
+    "handheld mini fan": 4.0,
+    "desk fan": 3.0,
+    "cooling fan": 4.0,
+    "rechargeable mini fan": 4.0,
+    "handheld fan": 4.0
+  }
+}
