@@ -75,7 +75,9 @@ def create_driver(headless=True):
     return driver
 
 logger = logging.getLogger(__name__)
-
+print("🔄 Attempting to initialize headless Chrome...", flush=True)
+driver = create_driver()
+print("✅ Driver initialized successfully!", flush=True)
 import re
 import time
 import logging
