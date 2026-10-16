@@ -53,10 +53,10 @@ def create_driver(headless=True):
     options.add_argument("--disable-gpu")
     
     # CRITICAL: Automatically find and use Chromium on GitHub Actions / Linux servers
-    if os.path.exists("/usr/bin/chromium"):
-        options.binary_location = "/usr/bin/chromium"
-    elif os.path.exists("/usr/bin/chromium-browser"):
+    if os.path.exists("/usr/bin/chromium-browser"):
         options.binary_location = "/usr/bin/chromium-browser"
+    elif os.path.exists("/usr/bin/chromium"):
+        options.binary_location = "/usr/bin/chromium"
 
     # Hide automation flags natively to avoid bot detection
     options.add_experimental_option("excludeSwitches", ["enable-automation", "enable-logging"])
