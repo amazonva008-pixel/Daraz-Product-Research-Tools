@@ -45,19 +45,15 @@ def create_driver(headless=True):
     if headless:
         options.add_argument("--headless=new")
 
-    # Essential cloud & stability flags
+    # Essential flags for root users / Linux containers (GitHub Codespaces)
     options.add_argument("--window-size=1920,1080")
-    options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
-    options.add_argument("--log-level=3")
+    options.add_argument("--disable-setuid-sandbox")  # <--- CRITICAL for root users
+    options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
+    options.add_argument("--remote-debugging-port=9222") # <--- Prevents socket crashes
+    options.add_argument("--log-level=3")
     
-    # CRITICAL: Automatically find and use Chromium on GitHub Actions / Linux servers
-    if os.path.exists("/usr/bin/chromium-browser"):
-        options.binary_location = "/usr/bin/chromium-browser"
-    elif os.path.exists("/usr/bin/chromium"):
-        options.binary_location = "/usr/bin/chromium"
-
     # Hide automation flags natively to avoid bot detection
     options.add_experimental_option("excludeSwitches", ["enable-automation", "enable-logging"])
     options.add_experimental_option("useAutomationExtension", False)
@@ -68,7 +64,7 @@ def create_driver(headless=True):
         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     )
 
-    service = Service()
+    service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
 
     # Strip navigator.webdriver attribute dynamically
