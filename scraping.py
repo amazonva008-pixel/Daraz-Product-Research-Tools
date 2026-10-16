@@ -45,7 +45,7 @@ def create_driver(headless=True):
     if headless:
         options.add_argument("--headless=new")
 
-    # Essential container & root flags
+    # Essential container & root stability flags
     options.add_argument("--window-size=1920,1080")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-setuid-sandbox")
@@ -53,8 +53,13 @@ def create_driver(headless=True):
     options.add_argument("--disable-gpu")
     options.add_argument("--log-level=3")
     
-    # CRITICAL: Point directly to the official Google Chrome binary we just installed
-    options.binary_location = "/usr/bin/google-chrome"
+    # Automatically locate Chromium on Streamlit Cloud or GitHub Codespaces
+    if os.path.exists("/usr/bin/chromium-browser"):
+        options.binary_location = "/usr/bin/chromium-browser"
+    elif os.path.exists("/usr/bin/chromium"):
+        options.binary_location = "/usr/bin/chromium"
+    elif os.path.exists("/usr/bin/google-chrome"):
+        options.binary_location = "/usr/bin/google-chrome"
 
     # Hide automation flags natively to avoid bot detection
     options.add_experimental_option("excludeSwitches", ["enable-automation", "enable-logging"])
@@ -66,7 +71,8 @@ def create_driver(headless=True):
         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     )
 
-    service = Service(ChromeDriverManager().install())
+    # Use standard system service (works seamlessly with packages.txt on Streamlit Cloud)
+    service = Service()
     driver = webdriver.Chrome(service=service, options=options)
 
     # Strip navigator.webdriver attribute dynamically
